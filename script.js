@@ -10,7 +10,6 @@ for (let i = 0; i < squareSize; i++) {
     let row = document.createElement('div');
     for (let j = 0; j < squareSize; j++) {
         let newDiv = document.createElement('div');
-        // newDiv.textContent = '▢';
         row.appendChild(newDiv);
     }
 

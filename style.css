@@ -1,12 +1,21 @@
+/* Use alternate box sizing */
+body {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
 /* Horizontal rows */
 .row {
     display: flex;
 }
 
-.container div {
-    width: 30px;
-    height: 30px;
+.row div {
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
 
-    background-color: darkcyan;
+    border: 1px solid black;
 }
