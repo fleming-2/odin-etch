@@ -5,6 +5,12 @@ function etch(event) {
     event.target.classList.add('black');
 }
 
+// Resets all divs
+function reset() {
+    document.querySelectorAll('.row div').forEach(div =>
+            div.classList.remove('black'));
+}
+
 // Create initial divs
 
 let squareSize = 16;
@@ -22,3 +28,5 @@ for (let i = 0; i < squareSize; i++) {
     row.classList.add('row');
     divContainer.appendChild(row);
 }
+
+document.getElementById('reset').addEventListener('click', reset);
