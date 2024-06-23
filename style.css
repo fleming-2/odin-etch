@@ -7,9 +7,26 @@ body {
     box-sizing: inherit;
 }
 
+h1 {
+    margin-bottom: 16px;
+}
+
+button {
+    display: block;
+    font-size: large;
+    padding-inline: 1em;
+    margin: 16px 1em;
+}
+
+.container {
+    border: 1px solid black;
+    width: max-content;
+}
+
 /* Horizontal rows */
 .row {
     display: flex;
+    width: max-content;
 }
 
 .row div {
