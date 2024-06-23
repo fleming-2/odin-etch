@@ -12,7 +12,7 @@ function reset() {
 }
 
 // Pad side length in px
-const sideLength = 960;
+const sideLength = 640;
 
 // Update no. of squares in pad
 function updatePad(squares) {
@@ -52,24 +52,15 @@ function updatePad(squares) {
         }
     }
 
-    reset();
+    // Resize the divs
+    let newSize = `${sideLength / squares}px`;
+    document.querySelectorAll('.row div').forEach(div => {
+        div.style.width = newSize;
+        div.style.height = newSize;
+    });
 }
 
 // Create initial divs
 updatePad(16);
-
-// let divContainer = document.getElementsByClassName('container')[0];
-
-// for (let i = 0; i < squareSize; i++) {
-//     let row = document.createElement('div');
-//     for (let j = 0; j < squareSize; j++) {
-//         let newDiv = document.createElement('div');
-//         newDiv.addEventListener('mouseover', etch);
-//         row.appendChild(newDiv);
-//     }
-
-//     row.classList.add('row');
-//     divContainer.appendChild(row);
-// }
 
 document.getElementById('reset').addEventListener('click', reset);
