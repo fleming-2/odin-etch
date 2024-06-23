@@ -53,12 +53,19 @@ function updatePad(squares) {
     }
 
     // Resize the divs
-    let newSize = `${sideLength / squares}px`;
-    const resizeDiv = function(div) {
-        div.style.width = newSize;
-        div.style.height = newSize;
-    }
-    document.querySelectorAll('.row div').forEach(resizeDiv);
+    let styleElement = document.querySelector('style');
+    let newSize = sideLength /squares;
+    styleElement.textContent = `.row div {
+        width: ${newSize}px;
+        height: ${newSize}px;
+    }`;
+
+    // let newSize = `${sideLength / squares}px`;
+    // const resizeDiv = function(div) {
+    //     div.style.width = newSize;
+    //     div.style.height = newSize;
+    // }
+    // document.querySelectorAll('.row div').forEach(resizeDiv);
 }
 
 // Create initial divs
