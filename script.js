@@ -54,13 +54,19 @@ function updatePad(squares) {
 
     // Resize the divs
     let newSize = `${sideLength / squares}px`;
-    document.querySelectorAll('.row div').forEach(div => {
+    const resizeDiv = function(div) {
         div.style.width = newSize;
         div.style.height = newSize;
-    });
+    }
+    document.querySelectorAll('.row div').forEach(resizeDiv);
 }
 
 // Create initial divs
 updatePad(16);
 
+// Button events
 document.getElementById('reset').addEventListener('click', reset);
+document.getElementById('change').addEventListener('click', function() {
+    const newSize = parseInt(prompt("Number of dots per side for new grid:"));
+    updatePad(newSize > 0 ? newSize : 16);
+});
