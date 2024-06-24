@@ -16,6 +16,14 @@ const sideLength = 640;
 
 // Update no. of squares in pad
 function updatePad(squares) {
+    // Restyle the divs to maintain the same size
+    let styleElement = document.querySelector('style');
+    let newSize = sideLength /squares;
+    styleElement.textContent = `.row div {
+        width: ${newSize}px;
+        height: ${newSize}px;
+    }`;
+
     let container = document.querySelector('.container');
 
     // live collection of rows
@@ -51,21 +59,6 @@ function updatePad(squares) {
             row.appendChild(newDiv);
         }
     }
-
-    // Resize the divs
-    let styleElement = document.querySelector('style');
-    let newSize = sideLength /squares;
-    styleElement.textContent = `.row div {
-        width: ${newSize}px;
-        height: ${newSize}px;
-    }`;
-
-    // let newSize = `${sideLength / squares}px`;
-    // const resizeDiv = function(div) {
-    //     div.style.width = newSize;
-    //     div.style.height = newSize;
-    // }
-    // document.querySelectorAll('.row div').forEach(resizeDiv);
 }
 
 // Create initial divs
