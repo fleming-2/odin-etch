@@ -31,8 +31,6 @@ button {
 
 .row div {
     flex-shrink: 0;
-}
-
-.black {
     background-color: black;
+    opacity: 0;
 }

@@ -1,14 +1,18 @@
 "use strict";
 
-// Makes divs black
+// Makes divs darker by 10%
 function etch(event) {
-    event.target.classList.add('black');
+    const oldOpacity = Number(event.target.style.opacity);
+    if (oldOpacity < 1) {
+        event.target.style.opacity = 0.1 + oldOpacity;
+    }
 }
 
 // Resets all divs
 function reset() {
     document.querySelectorAll('.row div').forEach(div =>
-            div.classList.remove('black'));
+        div.style.removeProperty('opacity')
+    )
 }
 
 // Pad side length in px
